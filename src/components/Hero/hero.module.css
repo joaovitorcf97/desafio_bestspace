@@ -1,0 +1,68 @@
+.hero {
+  background: var(--grey-800);
+  background-image: url('/girl-gamer.png');
+  background-size: 76%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-x: 150%;
+  background-position-y: bottom;
+  padding-top: 80px;
+}
+
+.hero > div {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  min-height: calc(100vh - 80px);
+  height: 100%;
+}
+
+.hero > div {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
+.hero > div h2 {
+  color: var(--white);
+  font-size: 4.5rem;
+  line-height: 1;
+  font-weight: 800;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.hero > div h3 {
+  color: var(--white);
+  font-size: 4.5rem;
+  line-height: 1;
+  font-weight: 800;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+.hero > div span {
+  color: var(--lime);
+}
+
+.hero > div p {
+  color: var(--grey-200);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  max-width: 440px;
+}
+
+.hero > div button {
+  margin-top: 30px;
+  padding: 16px 32px;
+  background: var(--lime);
+  color: var(--grey-900);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
