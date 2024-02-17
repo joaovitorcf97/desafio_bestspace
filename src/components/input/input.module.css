@@ -1,0 +1,48 @@
+.input_container {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.input_container label {
+  color: var(--grey-500);
+  font-size: 0.75rem;
+  line-height: 1rem;
+  margin-left: 4px;
+  text-transform: uppercase;
+}
+
+.input {
+  background: var(--grey-950);
+  margin-bottom: 8px;
+  padding-left: 1rem;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.input input {
+  background: transparent;
+  outline: none;
+  border: none;
+  width: calc(100% - 48px);
+  height: 100%;
+  color: var(--grey-200);
+}
+
+.input svg {
+  color: var(--lime);
+  width: 24px;
+  height: 24px;
+  margin-right: 16px;
+}
+
+.message_error {
+  color: #ef4444;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  margin-left: 4px;
+  margin-top: 4px;
+  margin-bottom: 8px;
+}

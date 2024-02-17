@@ -4,16 +4,16 @@ export function Hero() {
   return (
     <div className={style.hero}>
       <div>
-        <h2>
+        <h2 className={style.hero_title}>
           Produtos
           <br />
           Gamers
           <br />
-          <h3>
+          <p>
             Por <span>R$49_</span>
-          </h3>
+          </p>
         </h2>
-        <p>
+        <p className={style.hero_description}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam fugit
           aliquam dolorem recusandae iste, consequatur est totam id, maiores,
           possimus eaque.

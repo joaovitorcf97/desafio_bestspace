@@ -1,6 +1,32 @@
-import Image from 'next/image';
 import style from './body.module.css';
-export function Body() {
+import { Card } from './components/card';
+import { ContactForm } from './components/contactForm';
+
+interface ProductProp {
+  id: number;
+  product_type: string;
+  product_name: string;
+  image_url: string;
+  price: string;
+}
+
+async function getProducts() {
+  try {
+    const response = await fetch(`https://teste.joaovitor.tech/products`, {
+      next: {
+        revalidate: 320,
+      },
+    });
+
+    return response.json();
+  } catch (error) {
+    throw new Error('Erro ao buscar o jogo do dia');
+  }
+}
+
+export async function Body() {
+  const data: ProductProp[] = await getProducts();
+
   return (
     <div className={style.body}>
       <div className={style.description}>
@@ -9,74 +35,19 @@ export function Body() {
       </div>
 
       <div className={style.cards}>
-        <div className={style.card}>
-          <div className={style.card_image}>
-            <Image
-              src="/cadeira.png"
-              alt="Mouse Gamer"
-              fill={true}
-              quality={100}
-            />
-          </div>
-
-          <p>Cadeira Gamer</p>
-          <div className={style.card_content}>
-            <h3>Cadeira Gamer HyperX Pulsefire Surge RGB</h3>
-            <span>R$ 299,90</span>
-          </div>
-        </div>
-
-        <div className={style.card}>
-          <div className={style.card_image}>
-            <Image
-              src="/cadeira.png"
-              alt="Mouse Gamer"
-              fill={true}
-              quality={100}
-            />
-          </div>
-
-          <p>Cadeira Gamer</p>
-          <div className={style.card_content}>
-            <h3>Cadeira Gamer HyperX Pulsefire Surge RGB</h3>
-            <span>R$ 299,90</span>
-          </div>
-        </div>
-
-        <div className={style.card}>
-          <div className={style.card_image}>
-            <Image
-              src="/cadeira.png"
-              alt="Mouse Gamer"
-              fill={true}
-              quality={100}
-            />
-          </div>
-
-          <p>Cadeira Gamer</p>
-          <div className={style.card_content}>
-            <h3>Cadeira Gamer HyperX Pulsefire Surge RGB</h3>
-            <span>R$ 299,90</span>
-          </div>
-        </div>
-
-        <div className={style.card}>
-          <div className={style.card_image}>
-            <Image
-              src="/cadeira.png"
-              alt="Mouse Gamer"
-              fill={true}
-              quality={100}
-            />
-          </div>
-
-          <p>Cadeira Gamer</p>
-          <div className={style.card_content}>
-            <h3>Cadeira Gamer HyperX Pulsefire Surge RGB</h3>
-            <span>R$ 299,90</span>
-          </div>
-        </div>
+        {data.map((item) => (
+          <Card
+            key={item.id}
+            title={item.product_name}
+            productType={item.product_type}
+            price={item.price}
+            image={item.image_url}
+            alt={item.product_name}
+          />
+        ))}
       </div>
+
+      <ContactForm />
     </div>
   );
 }

@@ -1,0 +1,37 @@
+.contactForm {
+  background: var(--grey-900);
+  padding: 2rem;
+  margin: 7rem 0;
+}
+
+.descripton {
+  margin-bottom: 3rem;
+}
+
+.descripton h2 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.descripton h2 span {
+  color: var(--lime);
+}
+
+.descripton p {
+  color: var(--grey-200);
+  margin-top: 4px;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+@media (min-width: 1024px) {
+  .contactForm form > div {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    width: 100%;
+  }
+}
