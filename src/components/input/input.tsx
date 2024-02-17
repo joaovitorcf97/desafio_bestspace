@@ -90,9 +90,13 @@ export function Input({
 
       {errors[id] && (
         <div className={style.message_error}>
-          <span>{errors[id]?.message}</span>
+          <TextFieldError error={errors[id]?.message?.toString()} />
         </div>
       )}
     </div>
   );
+}
+
+function TextFieldError({ error }: { error?: string }) {
+  return error ? <span>{error}</span> : null;
 }
